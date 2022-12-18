@@ -1,6 +1,8 @@
 # Getting Started with Elyor Fayziev
 
-This project is available on github [Create React App](https://github.com/facebook/create-react-app).
+This project is available on github [Houzing](https://github.com/ElyorbekFayziev/Houzing).
+
+# can see the DEMO [Houzing](https://github.com/ElyorbekFayziev/Houzing)
 
 ## Available Scripts
 
