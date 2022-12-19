@@ -30,7 +30,7 @@ const Section = styled.div`
   align-items: center;
   cursor: ${({ logo }) => logo && 'pointer'};
   .active {
-    color: #b8ff06;
+    color: gray;
   }
 `;
 

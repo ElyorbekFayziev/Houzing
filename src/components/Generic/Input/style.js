@@ -22,9 +22,7 @@ const Container = styled.input`
  `;
  const Icon = styled.div`
   position: absolute;
-  transform: translate(-50%, -50%);
-  left: 20px;
-  top: 50%;
+  left: 10px;
  `;
 
  export { Container, Wrapper, Icon };

@@ -5,7 +5,7 @@ const typeOf = ({ type }) => {
     case 'dark':
       return {
         background: 'transparent',
-        border: '1px solid #FFFFFF',
+        border: '1px solid white',
         color: 'white',
       };
     case 'light':

@@ -4,16 +4,15 @@ import React, { useRef } from 'react';
  import { Container, Icons, MenuWrapper, Section } from './style';
 
  export const Filter = () => {
-  const countryRef = useRef();
-  const regionRef = useRef();
-  const cityRef = useRef();
-  const zipRef = useRef();
-  const roomsRef = useRef();
-  const sortRef = useRef();
-  const sizeRef = useRef();
-  const minPriceRef = useRef();
-  const maxPriceRef = useRef();
-
+  const countryRef = useRef('');
+  const regionRef = useRef('');
+  const cityRef = useRef('');
+  const zipRef = useRef('');
+  const roomsRef = useRef('');
+  const sortRef = useRef('');
+  const sizeRef = useRef('');
+  const minPriceRef = useRef('');
+  const maxPriceRef = useRef('');
   const filterMenu =()=> {
     return(
       <MenuWrapper>

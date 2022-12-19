@@ -30,7 +30,7 @@ export const Home = () => {
             })}
           </Section>
           <Section>
-            <Button onClick={() => navigate('/signin')} type='dark'>Login</Button>
+            <Button onClick={() => navigate('/login')} type='dark'>Login</Button>
            </Section>
          </Wrapper>
        </Main>

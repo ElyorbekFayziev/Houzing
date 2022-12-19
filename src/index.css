@@ -23,22 +23,12 @@ body {
 }
 .title {
   font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
   font-size: 28px;
-
   text-align: center;
-  letter-spacing: -0.02em;
-
-  /* text/1 */
-
   color: #0d263b;
 }
 .subTitle {
   font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
   font-size: 16px;
-
   color: #0d263b;
 }
