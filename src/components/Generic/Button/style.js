@@ -20,6 +20,12 @@ const typeOf = ({ type }) => {
         border: 'none',
         color: 'white',
       };
+      case 'transparent':
+      return {
+        background: 'transparent',
+        border: '1px solid white',
+        color: 'white',
+      };
 
     default:
       return {

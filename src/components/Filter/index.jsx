@@ -1,5 +1,5 @@
  import { Dropdown } from 'antd';
-import React, { useRef } from 'react';
+import React, { useRef} from 'react';
  import { Input, Button } from '../Generic';
  import { Container, Icons, MenuWrapper, Section } from './style';
 
@@ -36,16 +36,13 @@ import React, { useRef } from 'react';
        </Section>
      </MenuWrapper>
        )
-   };
-
+      };
    return (
      <Container>
        <Input icon={<Icons.Houses />} placeholder={'Enter an address, neighborhood, city, or ZIP code'}/>
-       <Dropdown overlay={filterMenu} placement='bottomRight' arrow={{ pointAtCenter: true }}>
-         <div>
-           <Button type='light'><Icons.Filter /> Advanced</Button>
-         </div>
-       </Dropdown>
+          <Dropdown overlay={filterMenu} placement='bottomRight' arrow={{pointAtCenter:true}}>
+            <div><Button type='light'><Icons.Filter/>Advanced</Button></div>
+         </Dropdown>
        <Button><Icons.Search /> Search</Button>
      </Container>
    );

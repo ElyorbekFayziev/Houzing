@@ -11,6 +11,7 @@ const Container = styled.input`
   width: ${({ width }) => (width ? `${width}px` : '100%')};
   outline: none;
   border: 1px solid #e6e9ec;
+
   padding-left: ${({ icon }) => (icon ? '35px' : '20px')};
  `;
 
@@ -23,6 +24,7 @@ const Container = styled.input`
  const Icon = styled.div`
   position: absolute;
   left: 10px;
+
  `;
 
  export { Container, Wrapper, Icon };
