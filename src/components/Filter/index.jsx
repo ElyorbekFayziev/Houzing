@@ -40,7 +40,7 @@ import React, { useRef} from 'react';
    return (
      <Container>
        <Input icon={<Icons.Houses />} placeholder={'Enter an address, neighborhood, city, or ZIP code'}/>
-          <Dropdown overlay={filterMenu} placement='bottomRight' arrow={{pointAtCenter:true}}>
+          <Dropdown overlay={filterMenu} placement='bottomRight' arrow={{pointAtCenter:true}} trigger='click'>
             <div><Button type='light'><Icons.Filter/>Advanced</Button></div>
          </Dropdown>
        <Button><Icons.Search /> Search</Button>
