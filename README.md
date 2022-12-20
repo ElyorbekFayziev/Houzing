@@ -2,7 +2,7 @@
 
 This project is available on github [Houzing](https://github.com/ElyorbekFayziev/Houzing).
 
-# can see the DEMO [Houzing](https://github.com/ElyorbekFayziev/Houzing)
+# can see the DEMO [Houzing](https://elyor-houzing.netlify.app)
 
 ## Available Scripts
 
