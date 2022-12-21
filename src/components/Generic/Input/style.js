@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+const typeOf = ({type})=>{
+  switch (type) {
+    case 'none':
+      return{
+        borderTop:'none',
+        borderRight:'none',
+        borderLeft:'none'
+      }
+    default:
+      break;
+  }
+}
+
 const Container = styled.input`
   display: flex;
   justify-content: center;
@@ -9,10 +22,13 @@ const Container = styled.input`
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : '14px')};
   height: ${({ height }) => (height ? `${height}px` : '44px')};
   width: ${({ width }) => (width ? `${width}px` : '100%')};
+  margin-top:${({margin})=>(margin? `${margin}px`:'0px')};
+  margin-bottom:${({bottom})=>(bottom? `${bottom}px`:'0px')};
   outline: none;
   border: 1px solid #e6e9ec;
-
   padding-left: ${({ icon }) => (icon ? '35px' : '20px')};
+  padding-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}px`: '20px')};
+  ${typeOf}
  `;
 
  const Wrapper = styled.div`

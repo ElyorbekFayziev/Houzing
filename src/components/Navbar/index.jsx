@@ -1,7 +1,7 @@
  import React from 'react';
  import { Outlet, useNavigate } from 'react-router-dom';
  import { navbar } from '../../utils/navbar';
- import Filter from '../Filter';
+//  import Filter from '../Filter';
  import { Button } from '../Generic/Button';
  import { Container, Link, Logo, Main, Section, Wrapper } from './style';
 
@@ -34,7 +34,7 @@ export const Home = () => {
            </Section>
          </Wrapper>
        </Main>
-       <Filter />
+       {/* <Filter /> */}
        <Outlet />
      </Container>
    );

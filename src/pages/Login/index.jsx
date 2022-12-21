@@ -6,13 +6,13 @@ const Login = ()=>{
         <Container>
             <Wrap>
             <div className="subtitle">Registrarion</div>
-            <Input width={'520'} placeholder='Login'/>
-            <Input width={'520'} placeholder='First Name'/>
-            <Input width={'520'} placeholder='Last Name'/>
-            <Input width={'520'} placeholder='Email'/>
-            <Input width={'520'} placeholder='User role'/>
-            <Input width={'520'} placeholder='Password'/>
-            <Input width={'520'} placeholder='Re-enter password'/>
+            <Input type={'none'} margin={'20'} width={'520'} placeholder='Login'/>
+            <Input type={'none'} margin={'20'} width={'520'} placeholder='First Name'/>
+            <Input type={'none'} margin={'20'} width={'520'} placeholder='Last Name'/>
+            <Input type={'none'} margin={'20'} width={'520'} placeholder='Email'/>
+            <Input type={'none'} margin={'20'} width={'520'} placeholder='User role'/>
+            <Input type={'none'} margin={'20'} width={'520'} placeholder='Password'/>
+            <Input type={'none'} margin={'20'} bottom={'32'} width={'520'} placeholder='Re-enter password'/>
             <Button width={'520'}>Register</Button>
             </Wrap>
         </Container>

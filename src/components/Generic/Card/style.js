@@ -16,7 +16,8 @@ position: relative;
 `
 const Img = styled.img`
 width: 100%;
-height: 220px;
+max-height: 220px;
+min-height: 220px;
 `
 const Button1 = styled.button`
 position: absolute;
@@ -64,6 +65,9 @@ font-size: 16px;
 line-height: 24px;
 color: #0D263B;
 margin-bottom: 5px;
+display: flex;
+overflow: hidden;
+white-space: nowrap;
 `
 const Main = styled.div`
 display: flex;
@@ -98,9 +102,18 @@ Icons.Ruler = styled(ruler)`
 margin-bottom: 10px;
 `;
 Icons.Resize = styled(resize)`
+  width: 27px;
+  height: 27px;
+  padding: 6px;
+  background: #f6f8f9;
+  border-radius: 50%;
+  cursor: pointer;
+  :active {
+    transform: scale(0.9);
+  }
 `;
 Icons.Love = styled(love)`
-width: 27px;
+  width: 27px;
   height: 27px;
   padding: 6px;
   background: #f6f8f9;

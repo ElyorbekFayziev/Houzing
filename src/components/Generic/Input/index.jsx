@@ -3,7 +3,7 @@
 
  export const Input = forwardRef(
    (
-     {type,onChange,value,defalutValue,placeholder,name,width,height,icon,},ref) => {
+     {type,onChange,value,defalutValue,placeholder,name,width,height,icon,margin,bottom,marginLeft},ref) => {
      return (
        <Wrapper>
          <Icon>{icon}</Icon>
@@ -18,6 +18,9 @@
            type={type}
            width={width}
            height={height}
+           margin={margin}
+           bottom={bottom}
+           marginLeft={marginLeft}
          />
        </Wrapper>
      );

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Wrap = styled.div`
 width: 580px;
-height: 670px;
+height: 620px;
 border: 1px solid #E6E9EC;
 box-shadow: 0px 10px 30px rgba(13, 38, 59, 0.05);
 border-radius: 3px;
