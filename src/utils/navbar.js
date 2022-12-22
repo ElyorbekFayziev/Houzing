@@ -2,10 +2,8 @@ import React from 'react';
 import useId from '../hooks/useId';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
-import HomePage from '../pages/Home';
-import Properties from '../components/Properties';
-// const HomePage = React.lazy(()=> import('../pages/Home'));
-// const Properties = React.lazy(()=> import('../pages/Properties'));
+const HomePage = React.lazy(()=> import('../pages/Home'));
+const Properties = React.lazy(()=> import('../pages/Properties'));
 
 
 export const navbar = [
