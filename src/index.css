@@ -4,9 +4,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-* {
+*{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -20,3 +21,46 @@ body {
   /* padding */
   --padding: 0 130px;
 }
+
+.title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  /* text/1 */
+
+  color: #0d263b;
+}
+.subTitle {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+
+  /* color: #0d263b; */
+  color: black;
+}
+.info {
+  /* Paragraph/Small/Regular */
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Text / Color */
+
+  color: #696969;
+}
+
+.slick-prev:before,
+ .slick-next:before {
+   color: black !important;
+   font-size: 25px !important;
+ }
