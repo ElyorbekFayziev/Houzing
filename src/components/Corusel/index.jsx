@@ -10,9 +10,6 @@ import { useNavigate } from 'react-router-dom';
 export const GenCarousel = () => {
   const navigate = useNavigate()
   const slider = useRef();
-  const onChange = (currentSlide) => {
-    console.log(currentSlide);
-  };
   const onMove = ({
     target: {
       dataset: { name },
@@ -24,7 +21,7 @@ export const GenCarousel = () => {
 
   return (
     <Container>
-      <Carousel ref={slider} afterChange={onChange}>
+      <Carousel ref={slider}>
         <Img src={img1} />
         <Img src={img2} />
       </Carousel>

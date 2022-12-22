@@ -2,7 +2,7 @@ import { Button1, Container, Content, Icons, Img, Main, User, Way } from "./styl
 import house1 from '../../../assets/img/house1.png'
 import user1 from '../../../assets/img/user1.png'
 const Card =({data})=>{
-  const {attachments,salePrice,price,houseDetails,address,city,country,description} = data
+  const {attachments,salePrice,price,houseDetails,address,city,country,description,category} = data
     return(
         <Container>
             <Img src={attachments[0]?.imgPath ||house1}/>
@@ -11,7 +11,7 @@ const Card =({data})=>{
             <User src={user1}/>
             <Content>
                 <Content.Text>{city},{country},{description}</Content.Text>
-                <div className="info">{address ||'Quincy St, Brooklyn, NY, USA'}</div>
+                <div className="info">{address ||'Quincy St, Brooklyn, NY, USA'} - {category?.name || 'Category'},{houseDetails?.room}-room</div>
                 <Main>
                     <Main.Item>
                     <Icons.Bed/> <div className="info">{houseDetails?.beds || 0}Beds</div>

@@ -4,7 +4,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -58,3 +58,9 @@ body {
 
   color: #696969;
 }
+
+.slick-prev:before,
+ .slick-next:before {
+   color: black !important;
+   font-size: 25px !important;
+ }
