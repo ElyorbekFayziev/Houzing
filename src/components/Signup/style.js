@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-width: 580px;
+max-width: 580px;
+width: 100%;
 height: 376px;
 border: 1px solid #E6E9EC;
 box-shadow: 0px 10px 30px rgba(13, 38, 59, 0.05);
@@ -17,6 +18,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 position: relative;
+margin-bottom: 415px;
 `
 const Text = styled.h1`
 font-family: 'Montserrat';

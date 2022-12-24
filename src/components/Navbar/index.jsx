@@ -1,7 +1,7 @@
  import React from 'react';
  import { Outlet, useNavigate } from 'react-router-dom';
  import { navbar } from '../../utils/navbar';
-//  import Filter from '../Filter';
+import Footer from '../Footer';
  import { Button } from '../Generic/Button';
  import { Container, Link, Logo, Main, Section, Wrapper } from './style';
 
@@ -16,26 +16,26 @@ export const Home = () => {
            </Section>
            <Section>
              {navbar.map(({ title, path, hidden }, index) => {
-              return (
-                !hidden && (
-                  <Link
-                    className={({ isActive }) => isActive && 'active'}
-                    key={index}
-                    to={path}
-                  >
+               return (
+                 !hidden && (
+                   <Link
+                   className={({ isActive }) => isActive && 'active'}
+                   key={index}
+                   to={path}
+                   >
                     {title}
                   </Link>
                 )
-              );
-            })}
+                );
+              })}
           </Section>
           <Section>
             <Button onClick={() => navigate('/login')} type='dark'>Login</Button>
            </Section>
          </Wrapper>
        </Main>
-       {/* <Filter /> */}
        <Outlet />
+       <Footer></Footer>
      </Container>
    );
 };

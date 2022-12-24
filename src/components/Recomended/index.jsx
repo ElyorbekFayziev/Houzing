@@ -2,11 +2,10 @@
  import { Container } from './style';
  import Slider from 'react-slick';
  import { useNavigate } from 'react-router-dom';
-import CategoryCard from '../CaregoryCard';
+import { Card } from '../Generic';
 
 
  const { REACT_APP_BASE_URL: url } = process.env;
-
  const settings = {
    className: 'center',
    centerMode: true,
@@ -21,12 +20,12 @@ import CategoryCard from '../CaregoryCard';
    appendDots: (dots) => <h1> {dots} </h1>,
  };
 
- export const Category = () => {
+ export const Recomended = ({text}) => {
    const [data, setData] = useState([]);
    const navigate = useNavigate();
 
    useEffect(() => {
-     fetch(`${url}/categories/list`)
+     fetch(`${url}/houses/list`)
        .then((res) => res.json())
        .then((res) => {
          setData(res?.data || []);
@@ -34,13 +33,13 @@ import CategoryCard from '../CaregoryCard';
    }, []);
    return (
      <Container>
-      <div className="title">Category</div>
+      <div className="title">{text || 'Recomended'}</div>
       <div className="info center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
        <Slider {...settings}>
          {data?.map((value) => {
            return (
-             <CategoryCard
-               key={value.id} onClick={() => navigate(`/properties?category_id=${value?.id}`)}
+             <Card
+               key={value.id} onClick={() => navigate(`/properties/${value.id}`)}
                data={value}
              />
            );
@@ -50,4 +49,4 @@ import CategoryCard from '../CaregoryCard';
    );
  };
 
- export default Category;
+ export default Recomended;

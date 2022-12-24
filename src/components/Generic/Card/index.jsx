@@ -1,10 +1,10 @@
 import { Button1, Container, Content, Icons, Img, Main, User, Way } from "./style"
 import house1 from '../../../assets/img/house1.png'
 import user1 from '../../../assets/img/user1.png'
-const Card =({data})=>{
+const Card =({data,onClick})=>{
   const {attachments,salePrice,price,houseDetails,address,city,country,description,category} = data
     return(
-        <Container>
+        <Container onClick={onClick}>
             <Img src={attachments[0]?.imgPath ||house1}/>
             <Button1 left>FEATURED</Button1>
             <Button1 right dark>FOR SALE</Button1>

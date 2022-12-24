@@ -27,12 +27,8 @@ body {
   font-style: normal;
   font-weight: 600;
   font-size: 28px;
-
   text-align: center;
   letter-spacing: -0.02em;
-
-  /* text/1 */
-
   color: #0d263b;
 }
 .subTitle {
@@ -40,27 +36,30 @@ body {
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-
-  /* color: #0d263b; */
   color: black;
 }
 .info {
-  /* Paragraph/Small/Regular */
-
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  /* identical to box height, or 143% */
-
-  /* Text / Color */
-
   color: #696969;
+}
+.center{
+  text-align: center;
+  margin: 8px 0 32px 0;
+}
+.width{
+  margin-top: 8px;
 }
 
 .slick-prev:before,
  .slick-next:before {
    color: black !important;
    font-size: 25px !important;
+ }
+path {
+  width: 18px;
+  height: 18px;
  }

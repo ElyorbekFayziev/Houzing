@@ -1,7 +1,6 @@
  import styled from 'styled-components';
 
  const Container = styled.div`
-
    border-radius: 3px;
    width: 100%;
    max-width: 280px;    

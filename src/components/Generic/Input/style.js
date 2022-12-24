@@ -29,6 +29,9 @@ const Container = styled.input`
   padding-left: ${({ icon }) => (icon ? '35px' : '20px')};
   padding-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}px`: '20px')};
   ${typeOf}
+  :focus{
+    border-bottom: 1px solid #0061DF;
+  }
  `;
 
  const Wrapper = styled.div`
