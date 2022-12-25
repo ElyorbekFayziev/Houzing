@@ -4,7 +4,6 @@ import HouseCard from "../Generic/Card";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
 import { PropertiesContext } from "../../context/properties";
-// import useRequest from "../../hooks/useRequest";
 const { REACT_APP_BASE_URL } = process.env;
 
 export const Favourite = () => {
@@ -37,10 +36,9 @@ export const Favourite = () => {
     navigate(`/properties/${id}`);
   };
 
-  console.log(data);
   return (
     <React.Fragment>
-      <div className="title">Favourite</div>
+      <div className="title" style={{marginTop:'48px'}}>Favourite</div>
       <div className="info" style={{ textAlign: "center" }}>
         Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
       </div>
@@ -49,14 +47,15 @@ export const Favourite = () => {
           data?.data.map((value) => {
             return (
               <HouseCard
+              key={value.id}
                 onClick={() => onSelect(value.id)}
-                key={value.id}
                 data={value}
+                favorite={value.favorite}
               />
             );
           })
         ) : (
-          <h1>No Data Found</h1>
+          <h1>You have not favourite house</h1>
         )}
       </Container>
     </React.Fragment>

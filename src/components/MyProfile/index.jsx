@@ -9,24 +9,22 @@ export const MyProfile = () => {
   const { search } = useLocation();
   const navigate = useNavigate();
 
-  const { data, refetch } = useQuery([search], () => {
-    return (
-      fetch(`${url}/houses/me`,{
+  const { data, refetch }  = useQuery([search], () => {
+    return fetch(`${url}/houses/me`,{
+      method:"GET",
         headers:{
           Authorization:`Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "application/json" 
         }
-      })
-    )
+      }).then(res=>res.json())
   });
-
   const columns = [
     {
       title: "Listing Title",
       key: "name",
       render: (data) => {
         return (
-          <User>
+          <User key={data?.id}>
             <User.Img
               src={
                 (data?.attachments && data?.attachments[0]?.imgPath) || noimg

@@ -120,6 +120,31 @@ Icons.Resize = styled(resize)`
     transform: scale(0.9);
   }
 `;
+
+const typeOf = ({favorite})=>{
+  switch (favorite) {
+    case 'true':
+      return{
+        background:'red',
+      }
+      case 'false':
+        return{
+          background:'#f6f8f9',
+        }
+    default:
+      break;
+  }
+}
+const path = ({favorite})=>{
+  switch (favorite) {
+    case 'true':
+      return{
+        fill:'white'
+      }
+    default:
+      break;
+  }
+}
 Icons.Love = styled(love)`
   width: 27px;
   height: 27px;
@@ -128,6 +153,10 @@ Icons.Love = styled(love)`
   border-radius: 50%;
   margin-left: 20px;
   cursor: pointer;
+  ${typeOf}
+  & path {
+    ${path}
+  }
   :active {
     stroke: red;
     transform: scale(0.9);

@@ -25,7 +25,7 @@ export const AddNewHouse = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  // single house
+  // Edit house
   useEffect(() => {
     if(id){
       fetch(`${url}/houses/id/${id}`)
@@ -36,15 +36,16 @@ export const AddNewHouse = () => {
       })
     }
   },[id]);
-
+  
   useEffect(() => {
     fetch(`${url}/categories/list`)
     .then((res)=>res.json())
     .then((res)=>{
-        setCategory(res?.data || [])
+      setCategory(res?.data || [])
     })
   },[]);
-
+  
+  // Add house
   const formik = useFormik({
     initialValues: initial,
     enableReinitialize: true,
@@ -230,63 +231,35 @@ export const AddNewHouse = () => {
             />
           </Section>
           <h1 className="subTitle">Additional</h1>
-
           <Section gap>
             <Section flex>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="homeAmenitiesDto.busStop"
-              >
+              <Checkbox onChange={formik.handleChange}name="homeAmenitiesDto.busStop">
                 Bus Stop
               </Checkbox>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="homeAmenitiesDto.garden"
-              >
+              <Checkbox onChange={formik.handleChange}name="homeAmenitiesDto.garden">
                 Garden
               </Checkbox>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="homeAmenitiesDto.market"
-              >
+              <Checkbox onChange={formik.handleChange}name="homeAmenitiesDto.market">
                 Market
               </Checkbox>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="homeAmenitiesDto.park"
-              >
+              <Checkbox onChange={formik.handleChange}name="homeAmenitiesDto.park">
                 Park
               </Checkbox>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="homeAmenitiesDto.parking"
-              >
+              <Checkbox onChange={formik.handleChange}name="homeAmenitiesDto.parking">
                 Parking
               </Checkbox>
             </Section>
             <Section flex>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="homeAmenitiesDto.school"
-              >
+              <Checkbox onChange={formik.handleChange}name="homeAmenitiesDto.school">
                 School
               </Checkbox>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="homeAmenitiesDto.statium"
-              >
+              <Checkbox onChange={formik.handleChange}name="homeAmenitiesDto.statium">
                 Statium
               </Checkbox>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="homeAmenitiesDto.subway"
-              >
+              <Checkbox onChange={formik.handleChange}name="homeAmenitiesDto.subway">
                 Subway
               </Checkbox>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="homeAmenitiesDto.superMarket"
-              >
+              <Checkbox onChange={formik.handleChange}name="homeAmenitiesDto.superMarket">
                 Super Market
               </Checkbox>
               <Checkbox onChange={formik.handleChange} name="houseDetails.tv">
@@ -294,36 +267,24 @@ export const AddNewHouse = () => {
               </Checkbox>
             </Section>
             <Section flex>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="houseDetails.airCondition"
-              >
+              <Checkbox onChange={formik.handleChange} name="houseDetails.airCondition">
                 Air Condition
               </Checkbox>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="houseDetails.courtyard"
-              >
+              <Checkbox onChange={formik.handleChange} name="houseDetails.courtyard">
                 Courtyard
               </Checkbox>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="houseDetails.furniture"
-              >
+              <Checkbox onChange={formik.handleChange} name="houseDetails.furniture">
                 Furniture
-              </Checkbox>
+              </Checkbox> 
               <Checkbox onChange={formik.handleChange} name="houseDetails.gas">
-                Gas Stove
+                 Gas Stove  
               </Checkbox>
-              <Checkbox
-                onChange={formik.handleChange}
-                name="houseDetails.internet"
-              >
+              <Checkbox onChange={formik.handleChange} name="houseDetails.internet">
                 Internet
               </Checkbox>
             </Section>
           </Section>
-          <Button>{id ? "Update" : "Save"}</Button>
+          <Button onClick={useFormik}>{id ? "Update" : "Save"}</Button>
         </MenuWrapper>
       </form>
     </Wrapper>

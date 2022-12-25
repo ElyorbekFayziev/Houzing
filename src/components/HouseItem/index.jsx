@@ -40,7 +40,6 @@ export const HouseItem = () => {
         state.refetch && state.refetch();
       });
   };
-  console.log(data);
   return (
     <React.Fragment>
       <Wrapper>

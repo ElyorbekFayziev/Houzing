@@ -9,12 +9,12 @@ export const Properties = () => {
   const [data,setData] = useState()
   const {search} = useLocation()
   const navigate = useNavigate()
-
+  
   useEffect(()=>{
     fetch(`${url}/houses/list${search}`)
     .then((res)=> res.json())
     .then((res)=>{
-    setData(res?.data)
+      setData(res?.data)
     })
   },[search])
   return<>
@@ -23,7 +23,7 @@ export const Properties = () => {
   <Text.P>Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</Text.P>  
   <Container>
     {data?.map((v)=>{
-      return <Card key={v.id} data={v} onClick={()=>navigate(`/properties/${v.id}`)}/>
+      return <Card key={v.id} data={v} onClick={()=>navigate(`/properties/${v.id}`)} favorite={v.favorite}/>
     })}
   </Container>;
   </> 

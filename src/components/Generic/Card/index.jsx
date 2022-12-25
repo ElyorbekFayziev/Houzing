@@ -57,7 +57,7 @@ const Card =({data,onClick})=>{
         </Main.Item>
         <Main.Item row>
           <Icons.Resize />
-          <Icons.Love onClick={save} favorite={favorite}/>
+          <Icons.Love onClick={save} favorite={String(favorite)}/>
         </Main.Item>
       </Content>
         </Container>

@@ -34,7 +34,7 @@ import { Card } from '../Generic';
    return (
      <Container>
       <div className="title">{text || 'Recomended'}</div>
-      <div className="info center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
+      <div className="info" style={{textAlign:'center'}}>Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
        <Slider {...settings}>
          {data?.map((value) => {
            return (

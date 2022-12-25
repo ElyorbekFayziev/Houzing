@@ -4,6 +4,7 @@ import Signup from '../components/Signup';
 import RegisterPage from '../pages/Register';
 import MyProfilePage from '../pages/MyProfile';
 import AddHousePage from '../pages/AddHouse';
+import Loading from '../components/Generic/Loading'
 const HomePage = React.lazy(()=> import('../pages/Home'));
 const PropertiesPage = React.lazy(()=> import('../pages/Properties'));
 const Favorite = React.lazy(()=> import('../pages/Favorite'));
@@ -14,7 +15,7 @@ export const navbar = [
   {
     id: useId,
     element: 
-    (<React.Suspense fallback={<React.Fragment><h1>Loading...</h1></React.Fragment>}>
+    (<React.Suspense fallback={<React.Fragment><Loading></Loading></React.Fragment>}>
       <HomePage />
     </React.Suspense>),
     title: 'Home',
@@ -25,7 +26,7 @@ export const navbar = [
   {
     id: useId,
     element: 
-    (<React.Suspense fallback={<React.Fragment><h1>Loading...</h1></React.Fragment>}>
+    (<React.Suspense fallback={<React.Fragment><Loading></Loading></React.Fragment>}>
     <PropertiesPage />
    </React.Suspense>),
     title: 'Properties',
@@ -36,7 +37,7 @@ export const navbar = [
   {
     id: useId,
     element: 
-    (<React.Suspense fallback={<React.Fragment><h1>Loading...</h1></React.Fragment>}>
+    (<React.Suspense fallback={<React.Fragment><Loading></Loading></React.Fragment>}>
     <Favorite />
    </React.Suspense>),
     title: 'Favorite',
@@ -47,7 +48,7 @@ export const navbar = [
   {
     id: useId,
     element: 
-    (<React.Suspense fallback={<React.Fragment><h1>Loading...</h1></React.Fragment>}>
+    (<React.Suspense fallback={<React.Fragment><Loading></Loading></React.Fragment>}>
     <HouseItem />
    </React.Suspense>),
     title: 'ProperHouseItemties',
@@ -68,6 +69,14 @@ export const navbar = [
     element: <MyProfilePage />,
     title: 'MyProfile',
     path: '/myprofile',
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useId,
+    element: <AddHousePage />,
+    title: 'MyProfile',
+    path: '/myprofile/edithouse/:id',
     private: false,
     hidden: true,
   },
