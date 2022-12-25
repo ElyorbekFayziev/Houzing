@@ -25,7 +25,7 @@ position: relative;
 const Img = styled.img`
 width: 100%;
 max-height: 220px;
-min-height: 200px;
+min-height: 220px;
 `
 const Button1 = styled.button`
 position: absolute;

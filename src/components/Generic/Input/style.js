@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const typeOf = ({type})=>{
-  switch (type) {
+const typeOf = ({stil})=>{
+  switch (stil) {
     case 'none':
       return{
         borderTop:'none',
@@ -43,7 +43,6 @@ const Container = styled.input`
  const Icon = styled.div`
   position: absolute;
   left: 10px;
-
  `;
 
  export { Container, Wrapper, Icon };
