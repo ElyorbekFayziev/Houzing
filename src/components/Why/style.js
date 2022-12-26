@@ -29,6 +29,7 @@ const Wrapper = styled.div`
   width: 100%;
   padding: 0px 130px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   margin-top: 40px;

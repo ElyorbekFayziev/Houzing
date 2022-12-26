@@ -5,8 +5,10 @@
    width: 100%;
    max-width: 280px;    
    min-width: 230px;
-   max-height: 380px;
-   min-height: 350px;
+   height: fit-content;
+   :hover{
+    cursor: pointer;
+   }
    filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
    drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
    drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
@@ -15,8 +17,10 @@ const Img = styled.img`
 width: 100%;
    max-width: 280px;    
    min-width: 230px;
-   max-height: 380px;
-   min-height: 350px;
+   height: fit-content;
+
+   /* max-height: 380px;
+   min-height: 350px; */
   border-radius: 3px;
 `;
 const Content = styled.div`

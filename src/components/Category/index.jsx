@@ -13,11 +13,11 @@ import CategoryCard from '../CaregoryCard';
    infinite: true,
    centerPadding: '25px',
    slidesToShow: 3,
+   height:'fit-content',
    speed: 500,
    arrows: true,
    adaptiveHeight: true,
    dots: true,
-
    appendDots: (dots) => <h1> {dots} </h1>,
  };
 

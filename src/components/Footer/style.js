@@ -7,6 +7,7 @@ const Container = styled.div`
   height: fit-content;
   background: #0d263b;
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   justify-content: space-around;
   margin: auto;

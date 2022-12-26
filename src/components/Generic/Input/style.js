@@ -30,7 +30,7 @@ const Container = styled.input`
   padding-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}px`: '20px')};
   ${typeOf}
   :focus{
-    border-bottom: 1px solid #0061DF;
+    ${({stil})=>stil? {borderBottom: '1px solid #0061DF'}:{border:'1px solid #0061DF'}}
   }
  `;
 
