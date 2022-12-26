@@ -6,6 +6,7 @@ import { Button, Input } from "../Generic";
 import { Checkbox } from "antd";
 import { useFormik } from "formik";
 import TextArea from "antd/lib/input/TextArea";
+
 const { REACT_APP_BASE_URL: url } = process.env;
 
 export const AddNewHouse = () => {
@@ -73,7 +74,6 @@ export const AddNewHouse = () => {
       setImg("");
     }
   };
-
   return (
     <Wrapper>
       <form onSubmit={formik.handleSubmit}>

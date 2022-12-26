@@ -7,6 +7,7 @@ import Recomended from '../Recomended';
 import Why from '../Why';
 import { Container } from './style';
 
+
 export const Home = () => {
   return <Container>
     <Filter></Filter>

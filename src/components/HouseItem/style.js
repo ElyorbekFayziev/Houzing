@@ -39,12 +39,94 @@ const Container = styled.div`
 `;
 
 const Img = styled.img`
+flex: 1;
 margin-top: 24px;
+max-width: 1440px; 
+min-width: 550px;
+max-height: 800px;
+height:400px;
+`
+Img.First = styled.img`
+max-width: 285px;
+min-width: 280px;
+height: 190px;
+`
+Img.Content = styled.div`
+display: grid;
+grid-auto-flow: row;
+grid-template-columns: repeat(2,minmax(280px,1fr));
+margin-top: 25px;
+margin-left: 30px;
+grid-gap: 20px;
+`
+const Imgg = styled.div`
+border-radius: 3px;
+width: 100%;
+max-width: 280px;    
+min-width: 230px;
+height: fit-content;
+:hover{
+ cursor: pointer;
+}
+filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
+drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
+drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+`;
+const type =({blur})=>{
+  switch (blur) {
+    case 'true':
+      return{
+        position:'absolute',
+        top:'0',
+        left:'0',
+        right:'0',
+        bottom:'0',
+        background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(.jpg)'
+      }  
+    default:
+      return{}
+  }
+}
+Img.Last = styled.img`
+width: 280px;
+height: 190px;
+${type}
+`
+const Text = styled.div`
+position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+`
+
+const Blur = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+`;
+
+Img.Wrap=styled.div`
+display: flex;
+position: relative;
 max-width: 1440px;
 width: 100%;
-max-height: 800px;
-height:fit-content;
-
+gap: 20px;
 `
 
 const Wrapper = styled.div`
@@ -334,7 +416,6 @@ font-weight: 400;
 font-size: 14px;
 line-height: 20px;
 color: #696969;
-/* margin-top: ${({ mt }) => `${mt}px`}; */
 margin-top:0.8px;
 margin-left: 8px;
 `
@@ -350,5 +431,8 @@ export {
   Description,
   User,
   Img,
-  Hr
+  Hr,
+  Blur,
+  Text,
+  Imgg
 };

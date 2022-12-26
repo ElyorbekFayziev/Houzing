@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { Input, Button } from "../Generic";
 import Recent from "../Recomended";
 import nouser from "../../assets/img/nouser.jpeg";
-import {Container,Content,Description,Details,Hr,Icons,Img,Info,Section,User,Wrapper,} from "./style";
+import {Container,Content,Description,Details,Hr,Icons,Img,Info,Section,User,Wrapper,Blur,Text,Imgg} from "./style";
 import { PropertiesContext } from "../../context/properties";
 
 export const HouseItem = () => {
@@ -40,10 +40,111 @@ export const HouseItem = () => {
         state.refetch && state.refetch();
       });
   };
+  const img = ()=>{
+    if(data?.attachments?.length === 1 ) {
+      console.log(1,data?.attachments);
+        return(
+          <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
+        )
+    }
+    else if(data?.attachments?.length === 2 ){
+      console.log(2,data?.attachments);
+
+      return(
+        <>
+        <Img.Wrap>
+        <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
+        <Img.Content>
+        <Img.First src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
+        </Img.Content>
+        </Img.Wrap>
+        </>
+      )
+    }
+    else if(data?.attachments?.length === 3 ){
+      console.log(3,data?.attachments);
+
+        return(
+          <>
+          <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
+          <Img.Wrap>
+          <Img.Content>
+          <Img.First src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
+          <Img.First src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg}/>
+          </Img.Content>
+          </Img.Wrap>
+          </>
+        )
+    }
+    else if(data?.attachments?.length === 4){
+      console.log(4,data?.attachments);
+
+      return(
+        <>
+        <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
+        <Img.Wrap>
+        <Img.Content>
+        <Img.First src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
+        <Img.First src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg}/>
+        <Img.First src={(data?.attachments && data?.attachments[3]?.imgPath)  || noimg}/>
+        </Img.Content>
+        </Img.Wrap>
+        </>
+      )
+    }
+    else if(data?.attachments?.length === 5){
+<>
+        <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
+        <Img.Wrap>
+        <Img.Content>
+        <Img.First src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
+        <Img.First src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg}/>
+        <Img.First src={(data?.attachments && data?.attachments[3]?.imgPath)  || noimg}/>
+        <Img.Last src={(data?.attachments && data?.attachments[4]?.imgPath)  || noimg}/>
+        </Img.Content>
+        </Img.Wrap>
+        </>
+    }
+    else if(data?.attachments?.length > 4){
+      console.log(5,data?.attachments);
+      return(
+        <>
+       <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
+        <Img.Wrap>
+        <Img.Content>
+        <Img.First src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
+        <Img.First src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg}/>
+        <Img.First src={(data?.attachments && data?.attachments[3]?.imgPath)  || noimg}/>
+          <Imgg onClick={onClick}>
+            <Img.Last src={(data?.attachments && data?.attachments[4]?.imgPath)  || noimg} />
+            <Blur />
+            <Text>+{data?.attachments?.length || '0'}</Text>
+          </Imgg>
+        </Img.Content>
+        </Img.Wrap>
+        </>
+      )
+    }
+  }
+  const onClick =()=>{
+    console.log('ooo baby');
+  }
   return (
     <React.Fragment>
       <Wrapper>
-        <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
+          {/* <Img.Wrap>
+          <Img.First src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
+          <Img.First src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg}/>
+          <Img.First src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg}/>
+            <Imgg onClick={onClick}>
+              <Img.Last src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg} />
+              <Blur />
+              <Text>+{data?.attachments?.length || '0'}</Text>
+            </Imgg>
+          </Img.Wrap> */}
+        {
+          img()
+        }
       </Wrapper>
       <Wrapper>
         <Container flex={3}>
