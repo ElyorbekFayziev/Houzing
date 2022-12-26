@@ -23,8 +23,13 @@ const Signup =()=>{
         headers:{"Content-Type": "application/json"}
       }).then((res)=>res.json())
       .then((res)=>{
-        info();
-        navigate("/signin")
+        if(res?.success === 'true'){
+          info();
+          navigate("/signin")
+        }
+        else{
+          message.warning(`Ro'yxatga olib bo'lmadi!`)
+        }
       })
     };
 
