@@ -54,9 +54,7 @@ export const HouseItem = () => {
         <>
         <Img.Wrap>
         <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
-        <Img.Content>
-        <Img.First src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
-        </Img.Content>
+        <Img src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
         </Img.Wrap>
         </>
       )
