@@ -4,7 +4,7 @@ import { ReactComponent as phone } from '../../assets/icons/phone.svg';
 import { ReactComponent as location } from '../../assets/icons/location.svg';
 
 const Container = styled.div`
-  height: 417px;
+  height: fit-content;
   background: #0d263b;
   display: flex;
   position: relative;

@@ -1,7 +1,7 @@
  import { Dropdown } from 'antd';
  import React from 'react';
  import { useNavigate, useLocation } from 'react-router-dom';
- import { useEffect, useRef, useState } from 'react';
+ import { useEffect, useState } from 'react';
  import  {Input,Button} from '../Generic/';
  import { Container, Icons, MenuWrapper, Section, SelectAnt } from './style';
  import { uzeReplace } from '../../hooks/uzeReplace';
@@ -14,11 +14,6 @@
    const location = useLocation();
    const navigate = useNavigate();
    const query = useSearch();
-   const roomsRef = useRef();
-   const sortRef = useRef();
-   const sizeRef = useRef();
-   const minPriceRef = useRef();
-   const maxPriceRef = useRef();
 
    const onChange = ({ target: { name, value } }) => {
      navigate(`${location?.pathname}${uzeReplace(name, value)}`);
@@ -51,25 +46,21 @@
      <MenuWrapper>
        <h1 className='subTitle'>Address</h1>
       <Section>
-         <Input ref={roomsRef} placeholder='Rooms' />
-         <Input ref={sizeRef} placeholder='Size' />
-         <Input ref={sortRef} placeholder='Sort' />
+         <Input onChange={onChange} name='country' placeholder='Country' value={query.get('country') || ''}/>
+         <Input onChange={onChange} name='region' placeholder='Region'  value={query.get('region') || ''}/>
+         <Input onChange={onChange} name='city' placeholder='City'  value={query.get('city') || ''}/>
+         <Input onChange={onChange} name='zip_code' placeholder='Zip code'  value={query.get('zip_code') || ''}/>
       </Section>
        <h1 className='subTitle'>Apartment info</h1>
        <Section>
-         <Input
-           name='room'
-           onChange={onChange}
-           ref={roomsRef}
-           placeholder='Rooms'
-         />
+         <Input name='room' onChange={onChange} value={query.get('room') || ''} placeholder='Rooms' />
          <SelectAnt defaultValue={query.get('sort') || 'Select Sort'}onChange={onChangeSort}>
            <SelectAnt.Option value={''}>Select Sort</SelectAnt.Option>
            <SelectAnt.Option value={'asc'}>O'suvchi</SelectAnt.Option>
            <SelectAnt.Option value={'desc'}>Kamayuvchi</SelectAnt.Option>
          </SelectAnt>
 
-         <SelectAnt value={value} onChange={onChangeCategory}>
+         <SelectAnt value={value} onChange={onChangeCategory} defaultValue={query.get('category') || 'Select Category'}>
            <SelectAnt.Option value={''}>Select Category</SelectAnt.Option>
            {data.map((value) => {
              return (
@@ -82,18 +73,8 @@
        </Section>
        <h1 className='subTitle'>Price</h1>
        <Section>
-         <Input
-           onChange={onChange}
-           name='min_price'
-           ref={minPriceRef}
-           placeholder='Min price'
-         />
-         <Input
-           onChange={onChange}
-           name='max_price'
-           ref={maxPriceRef}
-           placeholder='Max price'
-         />
+         <Input onChange={onChange} value={query.get('min_price') || ''} name='min_price' placeholder='Min price' />
+         <Input onChange={onChange} value={query.get('max_price') || ''} name='max_price' placeholder='Max price' />
        </Section>
      </MenuWrapper>
    );

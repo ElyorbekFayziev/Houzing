@@ -57,7 +57,7 @@ export const AddNewHouse = () => {
           "Content-Type": "application/json" 
         },
         body:JSON.stringify({
-          ...values,categoryId: 1,name: "webbriain",attachments: imgs,
+          ...values,categoryId: 1,name: "elyor",attachments: imgs,
         })
       })
       .then((res)=>res.json())
@@ -211,7 +211,7 @@ export const AddNewHouse = () => {
             {imgs.map((value) => {
               return (
                 <pre key={value.id}>
-                  {value?.imgPath}{" "}
+                  {value?.imgPath}
                   <IconDelete
                     onClick={() => {
                       let res = imgs.filter((vl) => vl.id !== value.id);

@@ -13,11 +13,7 @@ export const Home = () => {
   const onClick = () => {
     navigate("/signin");
   };
-  const onClickProfile = ({
-    target: {
-      dataset: { name },
-    },
-  }) => {
+  const onClickProfile = ({target: {dataset: { name }}}) => {
     if (name === "logout") {
       localStorage.removeItem("token");
       navigate(`/home`);
