@@ -1,4 +1,4 @@
-import { Checkbox, message } from "antd";
+import { Checkbox, Dropdown, message } from "antd";
 import noimg from '../../assets/img/noimg.jpeg'
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -39,7 +39,20 @@ export const HouseItem = () => {
         else res?.success && message.info("Successfully liked");
         state.refetch && state.refetch();
       });
-  };
+    };
+    // const onClick = (
+    //   <>
+    //   <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
+    //     <Img.Wrap>
+    //     <Img.Content>
+    //     <Img.First src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
+    //     <Img.First src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg}/>
+    //     <Img.First src={(data?.attachments && data?.attachments[3]?.imgPath)  || noimg}/>
+    //     <Img.Last src={(data?.attachments && data?.attachments[4]?.imgPath)  || noimg}/>
+    //     </Img.Content>
+    //     </Img.Wrap>
+    //   </>
+    // );
   const img = ()=>{
     if(data?.attachments?.length === 1 ) {
       console.log(1,data?.attachments);
@@ -48,7 +61,6 @@ export const HouseItem = () => {
         )
     }
     else if(data?.attachments?.length === 2 ){
-      console.log(2,data?.attachments);
 
       return(
         <>
@@ -60,7 +72,6 @@ export const HouseItem = () => {
       )
     }
     else if(data?.attachments?.length === 3 ){
-      console.log(3,data?.attachments);
 
         return(
           <>
@@ -75,7 +86,6 @@ export const HouseItem = () => {
         )
     }
     else if(data?.attachments?.length === 4){
-      console.log(4,data?.attachments);
 
       return(
         <>
@@ -91,7 +101,8 @@ export const HouseItem = () => {
       )
     }
     else if(data?.attachments?.length === 5){
-<>
+return(
+  <>
         <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
         <Img.Wrap>
         <Img.Content>
@@ -102,9 +113,9 @@ export const HouseItem = () => {
         </Img.Content>
         </Img.Wrap>
         </>
+)
     }
-    else if(data?.attachments?.length > 4){
-      console.log(5,data?.attachments);
+    else if(data?.attachments?.length > 5){
       return(
         <>
        <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
@@ -113,37 +124,30 @@ export const HouseItem = () => {
         <Img.First src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
         <Img.First src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg}/>
         <Img.First src={(data?.attachments && data?.attachments[3]?.imgPath)  || noimg}/>
-          <Imgg onClick={onClick}>
+        <Dropdown
+        overlay={onClick}
+        placement='bottomRight'
+        arrow={{ pointAtStart: true}}
+        trigger='click'
+      >
+        <div>
+          <Imgg>
             <Img.Last src={(data?.attachments && data?.attachments[4]?.imgPath)  || noimg} />
             <Blur />
-            <Text>+{data?.attachments?.length || '0'}</Text>
+            <Text>+{data?.attachments?.length-5 || '0'}</Text>
           </Imgg>
+        </div>
+      </Dropdown>
         </Img.Content>
         </Img.Wrap>
         </>
       )
     }
   }
-  const onClick =()=>{
-    console.log('ooo baby');
-  }
+  // console.log(data?.attachments?.length);
   return (
     <React.Fragment>
-      <Wrapper>
-          {/* <Img.Wrap>
-          <Img.First src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
-          <Img.First src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg}/>
-          <Img.First src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg}/>
-            <Imgg onClick={onClick}>
-              <Img.Last src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg} />
-              <Blur />
-              <Text>+{data?.attachments?.length || '0'}</Text>
-            </Imgg>
-          </Img.Wrap> */}
-        {
-          img()
-        }
-      </Wrapper>
+      <Wrapper>{img()}</Wrapper>
       <Wrapper>
         <Container flex={3}>
           <Section>
