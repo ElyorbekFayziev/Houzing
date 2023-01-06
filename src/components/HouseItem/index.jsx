@@ -115,34 +115,34 @@ return(
         </>
 )
     }
-    else if(data?.attachments?.length > 5){
-      return(
-        <>
-       <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
-        <Img.Wrap>
-        <Img.Content>
-        <Img.First src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
-        <Img.First src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg}/>
-        <Img.First src={(data?.attachments && data?.attachments[3]?.imgPath)  || noimg}/>
-        <Dropdown
-        overlay={onClick}
-        placement='bottomRight'
-        arrow={{ pointAtStart: true}}
-        trigger='click'
-      >
-        <div>
-          <Imgg>
-            <Img.Last src={(data?.attachments && data?.attachments[4]?.imgPath)  || noimg} />
-            <Blur />
-            <Text>+{data?.attachments?.length-5 || '0'}</Text>
-          </Imgg>
-        </div>
-      </Dropdown>
-        </Img.Content>
-        </Img.Wrap>
-        </>
-      )
-    }
+    // else if(data?.attachments?.length > 5){
+    //   return(
+    //     <>
+    //    <Img src={(data?.attachments && data?.attachments[0]?.imgPath)  || noimg}/>
+    //     <Img.Wrap>
+    //     <Img.Content>
+    //     <Img.First src={(data?.attachments && data?.attachments[1]?.imgPath)  || noimg}/>
+    //     <Img.First src={(data?.attachments && data?.attachments[2]?.imgPath)  || noimg}/>
+    //     <Img.First src={(data?.attachments && data?.attachments[3]?.imgPath)  || noimg}/>
+    //     <Dropdown
+    //     overlay={onClick}
+    //     placement='bottomRight'
+    //     arrow={{ pointAtStart: true}}
+    //     trigger='click'
+    //   >
+    //     <div>
+    //       <Imgg>
+    //         <Img.Last src={(data?.attachments && data?.attachments[4]?.imgPath)  || noimg} />
+    //         <Blur />
+    //         <Text>+{data?.attachments?.length-5 || '0'}</Text>
+    //       </Imgg>
+    //     </div>
+    //   </Dropdown>
+    //     </Img.Content>
+    //     </Img.Wrap>
+    //     </>
+    //   )
+    // }
   }
   // console.log(data?.attachments?.length);
   return (
