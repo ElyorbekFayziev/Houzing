@@ -1,11 +1,11 @@
-import { Checkbox, Dropdown, message } from "antd";
+import { Checkbox, message } from "antd";
 import noimg from '../../assets/img/noimg.jpeg'
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Input, Button } from "../Generic";
 import Recent from "../Recomended";
 import nouser from "../../assets/img/nouser.jpeg";
-import {Container,Content,Description,Details,Hr,Icons,Img,Info,Section,User,Wrapper,Blur,Text,Imgg} from "./style";
+import {Container,Content,Description,Details,Hr,Icons,Img,Info,Section,User,Wrapper} from "./style";
 import { PropertiesContext } from "../../context/properties";
 
 export const HouseItem = () => {
