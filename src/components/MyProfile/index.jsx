@@ -1,12 +1,15 @@
 import { AntTable, Container, Icons, User, Wrapper } from "./style";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "../Generic";
+import  Loading  from "../Generic/Loading";
 import noimg from "../../assets/img/noimg.jpeg";
 import { useQuery } from "react-query";
 import { message } from "antd";
+import { useState } from "react";
 const { REACT_APP_BASE_URL: url } = process.env;
 export const MyProfile = () => {
   const { search } = useLocation();
+  const [load,setLoad] = useState(true)
   const navigate = useNavigate();
 
   const { data, refetch }  = useQuery([search], () => {
@@ -16,7 +19,7 @@ export const MyProfile = () => {
           Authorization:`Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "application/json" 
         }
-      }).then(res=>res.json())
+      }).then(res=>res.json()).then(res=>setLoad(false))
   });
   const columns = [
     {
@@ -106,7 +109,10 @@ export const MyProfile = () => {
   };
 
   return (
-    <Wrapper>
+    <>
+    {load?<Loading></Loading>:
+
+      <Wrapper>
       <User>
         <div style={{ textAlign: "start" }} className="title">
           My Properties
@@ -129,9 +135,11 @@ export const MyProfile = () => {
           }}
           dataSource={data?.data}
           columns={columns}
-        />
+          />
       </Container>
     </Wrapper>
+        }
+          </>
   );
 };
 

@@ -3,6 +3,7 @@ import { Wrapper, MenuWrapper, Section, SelectAnt, IconDelete } from "./style";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Input } from "../Generic";
+import Loading from "../Generic/Loading";
 import { Checkbox } from "antd";
 import { useFormik } from "formik";
 import TextArea from "antd/lib/input/TextArea";
@@ -11,6 +12,7 @@ const { REACT_APP_BASE_URL: url } = process.env;
 
 export const AddNewHouse = () => {
   const [imgs, setImgs] = useState([]);
+  const [load,setLoad] = useState(true)
   const [initial, setInitail] = useState({
     houseDetails: {},
     homeAmenitiesDto: {},
@@ -64,6 +66,7 @@ export const AddNewHouse = () => {
       .then((res)=>res.json())
       .then((res)=>{
         if (res?.success) navigate("/myprofile");
+        setLoad(false)
       })
     },
   });
@@ -75,6 +78,7 @@ export const AddNewHouse = () => {
     }
   };
   return (
+    <>{id && load?<Loading></Loading>:
     <Wrapper>
       <form onSubmit={formik.handleSubmit}>
         <MenuWrapper>
@@ -85,22 +89,23 @@ export const AddNewHouse = () => {
               value={formik.values.country}
               placeholder="Country"
               onChange={formik.handleChange}
-            />
+              />
             <Input
               onChange={formik.handleChange}
               name="region"
               value={formik.values.region}
               placeholder="Region"
-            />
+              />
             <Input
               onChange={formik.handleChange}
               name="city"
               value={formik.values?.city}
               placeholder="City"
-            />
+              />
             <Input
               onChange={formik.handleChange}
               name="address"
+              
               value={formik.values?.address}
               placeholder="Address"
             />
@@ -288,6 +293,8 @@ export const AddNewHouse = () => {
         </MenuWrapper>
       </form>
     </Wrapper>
+          }
+    </>
   );
 };
 

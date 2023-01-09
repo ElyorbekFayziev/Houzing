@@ -47,7 +47,7 @@ const Blur = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
 `;
 const Icons = styled.div``;

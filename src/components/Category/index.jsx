@@ -1,6 +1,7 @@
  import React, { useEffect, useState } from 'react';
  import { Container } from './style';
  import Slider from 'react-slick';
+ import Loading from '../Generic/Loading';
  import { useNavigate } from 'react-router-dom';
 import CategoryCard from '../CaregoryCard';
 
@@ -23,6 +24,7 @@ import CategoryCard from '../CaregoryCard';
 
  export const Category = () => {
    const [data, setData] = useState([]);
+   const [load,setLoad] = useState(true)
    const navigate = useNavigate();
 
    useEffect(() => {
@@ -30,23 +32,27 @@ import CategoryCard from '../CaregoryCard';
        .then((res) => res.json())
        .then((res) => {
          setData(res?.data || []);
+         setLoad(false)
        });
    }, []);
    return (
-     <Container>
+    <>{load?<Loading></Loading>:
+      <Container>
       <div className="title">Category</div>
       <div className="info center">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
        <Slider {...settings}>
          {data?.map((value) => {
            return (
              <CategoryCard
-               key={value.id} onClick={() => navigate(`/properties?category_id=${value?.id}`)}
-               data={value}
+             key={value.id} onClick={() => navigate(`/properties?category_id=${value?.id}`)}
+             data={value}
              />
-           );
-         })}
+             );
+            })}
        </Slider>
      </Container>
+          }
+            </>
    );
  };
 

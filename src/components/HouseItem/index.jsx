@@ -7,9 +7,12 @@ import Recent from "../Recomended";
 import nouser from "../../assets/img/nouser.jpeg";
 import {Container,Content,Description,Details,Hr,Icons,Img,Info,Section,User,Wrapper} from "./style";
 import { PropertiesContext } from "../../context/properties";
+import Loading from "../Generic/Loading";
+import MapWithAMarker from "../Generic/Yandex";
 
 export const HouseItem = () => {
   const [data, setData] = useState({});
+  const [load,setLoad] = useState(true)
   const params = useParams();
 
   useEffect(() => {
@@ -17,6 +20,7 @@ export const HouseItem = () => {
       .then((res) => res.json())
       .then((res) => {
         setData(res?.data);
+        setLoad(false)
         window.scrollTo(0, 0);
       });
   }, [params?.id]);
@@ -144,10 +148,12 @@ return(
     //   )
     // }
   }
-  // console.log(data?.attachments?.length);
+  if(data) console.log(data); 
   return (
     <React.Fragment>
-      <Wrapper>{img()}</Wrapper>
+      {load?<Loading></Loading>:
+      <>
+        <Wrapper>{img()}</Wrapper>
       <Wrapper>
         <Container flex={3}>
           <Section>
@@ -231,6 +237,7 @@ return(
               </Container>
             </Section>
           </Section>
+            <MapWithAMarker data={data?.location}></MapWithAMarker>
           <Hr mt='48'></Hr>
           <Content.Title mb='24' mt='48'>Property Details</Content.Title>
           <Section>
@@ -418,6 +425,8 @@ return(
       </Wrapper>
       <Hr></Hr>
       <Recent text={'Similar listings'}/>
+    </>
+    }
     </React.Fragment>
   );
 };

@@ -1,6 +1,7 @@
  import React, { useEffect, useState } from 'react';
  import { Container } from './style';
  import Slider from 'react-slick';
+ import Loading from '../Generic/Loading'
  import { useNavigate } from 'react-router-dom';
 import { Card } from '../Generic';
 
@@ -22,6 +23,7 @@ import { Card } from '../Generic';
 
  export const Recomended = ({text}) => {
    const [data, setData] = useState([]);
+   const [load,setLoad] = useState(true)
    const navigate = useNavigate();
 
    useEffect(() => {
@@ -29,9 +31,11 @@ import { Card } from '../Generic';
        .then((res) => res.json())
        .then((res) => {
          setData(res?.data || []);
+         setLoad(false)
        });
    }, []);
-   return (
+   return (<>
+   {load?<Loading></Loading>:
      <Container>
       <div className="title">{text || 'Recomended'}</div>
       <div className="info" style={{textAlign:'center' ,margin:'8px 0 28px 0'}}>Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
@@ -39,13 +43,15 @@ import { Card } from '../Generic';
          {data?.map((value) => {
            return (
              <Card
-               key={value.id} onClick={() => navigate(`/properties/${value.id}`)}
-               data={value}
+             key={value.id} onClick={() => navigate(`/properties/${value.id}`)}
+             data={value}
              />
-           );
-         })}
+             );
+            })}
        </Slider>
      </Container>
+          }
+            </>
    );
  };
 

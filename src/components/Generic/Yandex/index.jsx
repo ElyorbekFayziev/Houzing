@@ -1,30 +1,20 @@
-import React from "react";
-import { YMaps, Map } from "react-yandex-maps";
+import React from 'react';
+import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 
-const mapStyle = {
-  position: "relative",
-  left: 0,
-  top: 0,
-  width: "100wh",
-  height: "50vh",
-  overflow: "hidden",
-};
-
-export const Yandex = ({ center }) => {
+export default function App(props) {
+  const defaultState = {
+    center: [props?.data ? props?.data?.latitude : 41.311081,props?.data ?  props?.data?.longitude : 69.240562],
+    zoom: 7,
+  };
+console.log(props?.data);
   return (
-    <YMaps
-      query={{ apikey: "afbb60c1-0761-48a5-b821-b566bf220d8b", lang: "EN" }}
-    >
-      <Map
-        style={mapStyle}
-        defaultState={{ center: center || [41.2995, 69.2401], zoom: 13 }}
-      >
-        {/* <Placemark
-          key={1}
-          options={getPointOptions()}
-          geometry={{coordinates:center}}
-        /> */}
+    <div style={{width:'100%',marginTop:'40px'}}>
+
+    <YMaps style={{width:'100%'}}>
+      <Map defaultState={defaultState} width={'100%'} height={'400px'}>
+        <Placemark geometry={defaultState?.center} />
       </Map>
     </YMaps>
+    </div>
   );
-};
+}

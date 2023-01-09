@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactLoading from 'react-loading';
- 
-const Example = ({ type, color }) => (
-    <ReactLoading type={'Loading...'} color={'#0d263b'} height={'20%'} width={'20%'} />
+import './style.css'
+export const Example = ({ type, color }) => (
+    <>
+    <span className="loader"></span>
+    </>
 );
  
 export default Example;
