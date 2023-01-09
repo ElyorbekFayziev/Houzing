@@ -15,14 +15,15 @@ export const GenCarousel = () => {
       dataset: { name },
     },
   }) => {
-    if (name === 'right') slider.current.next();
-    if (name === 'left') slider.current.prev();
+    if (name === 'right') slider.current.prev();
+    if (name === 'left') slider.current.next();
   };
 
   return (
     <Container>
       <Carousel ref={slider}>
         <Img src={img1} />
+        <Img src={img2} />
         <Img src={img2} />
       </Carousel>
       <Blur />

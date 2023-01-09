@@ -13,7 +13,7 @@ import CategoryCard from '../CaregoryCard';
    centerMode: true,
    infinite: true,
    centerPadding: '25px',
-   slidesToShow: 3,
+   slidesToShow: 2.91,
    height:'fit-content',
    speed: 500,
    arrows: true,
